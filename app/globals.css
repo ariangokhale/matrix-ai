@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --matrix-green: #00ff41;
+  --matrix-dark-green: #003b00;
+  --background: #000000;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--matrix-green);
+  font-family: "Courier New", monospace;
+}
+
+/* Custom scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thumb-matrix-green::-webkit-scrollbar-thumb {
+  background-color: var(--matrix-green);
+}
+
+.scrollbar-track-black::-webkit-scrollbar-track {
+  background-color: var(--background);
+}
+
+/* Terminal text effect */
+.terminal-text {
+  position: relative;
+  line-height: 1.5;
+}
+
+/* Glitch text effect */
+.glitch-text {
+  position: relative;
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0
+      rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0
+      rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0
+      rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0
+      rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0
+      rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0
+      rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em -0.05em 0
+      rgba(0, 0, 255, 0.75);
+  }
+}
+
+/* Loading dots animation */
+.loading-dots .dot {
+  animation: loadingDots 1.5s infinite;
+  opacity: 0;
+}
+
+.loading-dots .dot:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.loading-dots .dot:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes loadingDots {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Custom matrix input placeholder */
+.matrix-input::placeholder {
+  color: rgba(0, 255, 65, 0.5);
+  opacity: 1;
+}
+
+/* For Firefox */
+.matrix-input::-moz-placeholder {
+  color: rgba(0, 255, 65, 0.5);
+  opacity: 1;
+}
+
+/* For Internet Explorer */
+.matrix-input:-ms-input-placeholder {
+  color: rgba(0, 255, 65, 0.5);
+  opacity: 1;
+}
+
+/* For Microsoft Edge */
+.matrix-input::-ms-input-placeholder {
+  color: rgba(0, 255, 65, 0.5);
+  opacity: 1;
+}
+
+/* For Chrome, Safari, Opera */
+.matrix-input::-webkit-input-placeholder {
+  color: rgba(0, 255, 65, 0.5);
+  opacity: 1;
+}
+
+/* Matrix textarea styling */
+.matrix-input {
+  line-height: 1.5;
+  padding: 0;
+}
+
+.matrix-input:focus {
+  outline: none;
+}
+
+/* Disable default textarea resize handle */
+.matrix-input::-webkit-resizer {
+  display: none;
+}
